@@ -26,3 +26,9 @@ class Selectors:
     "ping_all": "#ping_all",
 
     }
+
+    WMTOOLS = {
+
+    "url_input": "textarea",
+
+    }

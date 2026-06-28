@@ -2,6 +2,7 @@ import time
 
 from app.handlers.pingmyurls import PingMyUrlsHandler
 from app.handlers.pingomatic import PingomaticHandler
+from app.handlers.wmtools import WMToolsHandler
 
 from app.playwright.browser_manager import BrowserManager
 
@@ -34,6 +35,8 @@ class SubmissionOrchestrator:
                 PingomaticHandler(browser_manager),
 
                 BulkLinkHandler(browser_manager),
+
+                WMToolsHandler(browser_manager),
 
             ]
 
