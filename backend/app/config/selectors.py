@@ -32,3 +32,11 @@ class Selectors:
     "url_input": "textarea",
 
     }
+
+    PREPOSTSEO = {
+
+    "url_input": "textarea",
+
+    "next_button": "#stepOne",
+
+    }
