@@ -4,7 +4,8 @@ from app.handlers.pingmyurls import PingMyUrlsHandler
 from app.handlers.pingomatic import PingomaticHandler
 from app.handlers.wmtools import WMToolsHandler
 from app.handlers.prepostseo import PrePostSEOHandler
-
+from app.handlers.smallseotools import SmallSEOToolsHandler
+from app.handlers.pingler import PinglerHandler
 from app.playwright.browser_manager import BrowserManager
 
 from app.schemas.request import SubmissionRequest
@@ -41,6 +42,10 @@ class SubmissionOrchestrator:
 
                 PrePostSEOHandler(browser_manager),
 
+                PinglerHandler(browser_manager),
+
+                SmallSEOToolsHandler(browser_manager),
+   
             ]
 
             results = []

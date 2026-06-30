@@ -1,35 +1,44 @@
 from abc import ABC, abstractmethod
 
+from app.captcha.manager import CaptchaManager
+from app.playwright.browser_manager import BrowserManager
 from app.schemas.request import SubmissionRequest
 from app.schemas.result import SubmissionResult
-from app.playwright.browser_manager import BrowserManager
 
 
 class BaseHandler(ABC):
     """
-    Base class for all ping website handlers.
+    Base class for every website handler.
 
-    Every handler should:
-    1. Open the website
-    2. Fill the form
-    3. Submit
-    4. Verify success
-    5. Return SubmissionResult
+    Responsibilities:
+    - Store BrowserManager
+    - Store CaptchaManager
+    - Provide common interface for handlers
     """
 
-    def __init__(self, browser_manager: BrowserManager):
+    def __init__(
+        self,
+        browser_manager: BrowserManager,
+    ) -> None:
+
         self.browser_manager = browser_manager
+
+        self.captcha_manager = CaptchaManager()
 
     @property
     @abstractmethod
     def site_name(self) -> str:
-        """Human-readable site name."""
+        """
+        Human-readable website name.
+        """
         pass
 
     @property
     @abstractmethod
     def site_url(self) -> str:
-        """Target website URL."""
+        """
+        Website URL.
+        """
         pass
 
     @abstractmethod
@@ -38,6 +47,6 @@ class BaseHandler(ABC):
         request: SubmissionRequest,
     ) -> SubmissionResult:
         """
-        Execute complete submission flow.
+        Execute complete submission workflow.
         """
         pass

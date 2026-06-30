@@ -40,3 +40,53 @@ class Selectors:
     "next_button": "#stepOne",
 
     }
+
+    SMALLSEO = {
+
+    "url_input": "textarea",
+
+    "submit_button": "button:has-text('Ping Now')",
+
+    }
+
+    HCAPTCHA = {
+
+    "iframe": "iframe[src*='hcaptcha']",
+
+    "checkbox": "#checkbox",
+
+    "challenge": ".challenge-container",
+
+    }
+
+    DUPLICHECKER = {
+
+    "url_input": "input[name='url']",
+
+    "submit_button": "button:has-text('Ping URL Now')",
+
+    }
+
+    TURNSTILE = {
+
+        "iframe": "iframe[src*='turnstile']",
+
+    }
+
+    PINGLER = {
+
+    # Ad iframe
+    "ad_iframe": "iframe",
+
+    "pause_button": "button:has-text('Pause')",
+
+    # Form
+    "title_input": "input[placeholder='Title (keyword)']",
+
+    "url_input": "input[placeholder='http://pingler.com']",
+
+    "other_checkbox": "label:has-text('Other') input",
+
+    "submit_button": "button:has-text('Ping!')",
+
+    }
